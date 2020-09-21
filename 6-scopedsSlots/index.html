@@ -17,8 +17,8 @@
         </persons>
         <input @click="restablecer" type="button">
         <persons :persons="persons">
-            <template slot="persons" slot-scope="data">
-                <li>{{data.per.name.first}}</li>
+            <template slot="persons" slot-scope="data"> 
+                <li>{{data.per.name.first}}</li> 
             </template> 
         </persons>
         <pre>{{$data}}</pre>
