@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <Link rel="Stylesheet" href="main.css" ></Link>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>{{ menssage }}</h1>
+        <persons>
+            <template slot="persons" slot-scope="data">
+                <li :class="{tachar: data.per.estado}" @click="tachar(person)" >{{data.per}}</li>
+            </template>
+        </persons>
+        <pre>{{$data}}</pre>
+    </main>
+    <template id="personsTempl">
+        <ul>
+            <slot name="persons"
+            v-for="person in persons"
+            :per="person.estado">
+            </slot>
+        </ul>
+        
+    </template>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

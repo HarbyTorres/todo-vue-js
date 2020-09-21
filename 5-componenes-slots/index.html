@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <alerta tipo="alerta--exito" posicion="alerta--arriba-derecha">
+            <template slot="header">Titulo</template> 
+        </alerta>
+
+    </main>
+    <template id="alertacomponente">
+        <section class="alerta" :class="[tipo, posicion]">
+            <header class="alerta__header">
+                <slot name="header">
+                    Hola
+                </slot>
+            </header>
+            <div class="alert__contenido">
+                <slot name="contenido">
+                    sas dsad gdsgf dawdsc
+                </slot>
+            </div>
+            <footer class="alerta__footer">
+                <slot name="footer">
+                    texto footer
+                </slot>            
+            </footer>
+        </section>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>

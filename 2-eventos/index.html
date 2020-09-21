@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos</title>
+</head>
+<body>
+    <main>
+        <input type="search" placeholder="Buscar" v-model="busqueda">
+        <ul>
+            <li v-for="tarea in buscarTareas">
+                {{tarea.nombre}}
+                
+            </li>
+        </ul>
+        <h3>----------</h3>
+        <ul>
+            <li v-for= "tarea in tareasPrioridad">
+                {{tarea.nombre }}-{{ tareas.prioridad}}
+            </li>
+            <h3>antiguedad:</h3>
+            <input type="range" min="1" max="10" v-model="antiguedadMin">
+            <li v-for= "tarea in tareasfiltrarAnt">
+                {{tarea.nombre }}-{{tarea.antiguedad}}
+            </li>
+        </ul>
+        <form v-on:submit.prevent="agregartarea">
+            <input type="text" placeholder="Introduce tu tarea" v-model="nuevatarea" v-on:keyup.enter="agregartarea">
+            <input type="submit" value="Enviar tarea">
+        </form>
+        <pre>{{$data}}</pre>        
+        <pre>{{tareasPrioridad}}</pre>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>         
+</body>
+</html>

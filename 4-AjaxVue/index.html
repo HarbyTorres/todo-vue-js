@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <newpersons></newpersons>
+        <persons-temple :persons="persons"></persons-temple>
+        <pre>{{$data}}</pre>
+   </main>
+   <template id="persons-template">
+        <ul>
+            <h1> Personas</h1>
+            <li v-for="person in persons">
+                {{person.name.first}} {{person.name.last}}
+            </li>
+        </ul>
+   </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
