@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h4><input  @click="selecionado= 'los-programas'" type="button+">   Programas    </h4>
+        <h4><input  @click="selecionado= 'los-juegos'" type="button">   Juegos    </h4>
+        <h4><input  @click="selecionado= 'las-peliculas'" type="button">   Peliculas    </h4>
+        
+        <component :is="selecionado"></component>
+
+        <contrasena v-model="contrasena"></contrasena>
+    </main>
+    <template id="template-lista">
+        <div>
+            <ul v-for="elemento in lista">
+                <li>}  {{elemento}}</li>
+            </ul>
+        </div>
+    </template>
+    <template id="contrasena-template">
+        <input :value="contrasena" @input="comprobarContrasena($event.target.value)" ref="pass">
+     </template>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
